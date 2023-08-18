@@ -22,9 +22,26 @@ public class ReverseString {
        }
        return String.valueOf(string);
     }
+
+    public String reverseWords(String S){
+       String[] str = S.split("\\.");
+       StringBuffer reversedstring = new StringBuffer();
+       for(int i= str.length-1; i>=0; i--){
+           reversedstring.append(str[i]);
+           reversedstring.append(".");
+       }
+
+       reversedstring.deleteCharAt(reversedstring.length()-1);
+       return reversedstring.toString();
+    }
+
     public static void main(String[] args) {
         String str = "Hello";
         ReverseString reverseString = new ReverseString();
         System.out.println(reverseString.reverse(str));
+
+        String str1 = "i.like.this.program.very.much";
+        System.out.println(reverseString.reverseWords(str1));
+
     }
 }
